@@ -1,4 +1,4 @@
-# duke-webapp
+# Duke Webapp [![Build Status](https://travis-ci.org/mbasanta/DukeWebapp.svg)](https://travis-ci.org/mbasanta/DukeWebapp)
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
