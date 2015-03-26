@@ -14,4 +14,11 @@ angular.module('dukeWebappApp')
       'AngularJS',
       'Karma'
     ];
+
+    // try to match an access token in window.location.hash
+    var token = (window.location.hash) ? window.location.hash.match(/#access_token=([^&]+)/) : false;
+    if (token[1]) {
+      $scope.token = token[1];
+    }
+
   });
