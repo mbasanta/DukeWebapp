@@ -179,12 +179,24 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        exclude: [
+            /jquery/,
+            'bower_components/dojo/',
+            'bower_components/dijit/',
+            'bower_components/bootstrap/dist/js/'
+        ]
       },
       test: {
         devDependencies: true,
         src: '<%= karma.unit.configFile %>',
         ignorePath:  /\.\.\//,
+        exclude: [
+            /jquery/,
+            'bower_components/dojo/',
+            'bower_components/dijit/',
+            'bower_components/bootstrap/dist/js/'
+        ],
         fileTypes:{
           js: {
             block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
