@@ -19,6 +19,15 @@ angular
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
+      .when('/access_token=:accessToken', {
+        template: '',
+        controller: function ($location, AccessToken) {
+          var hash = $location.path().substr(1);
+          AccessToken.setTokenFromString(hash);
+          $location.path('/');
+          $location.replace();
+        }
+      })
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
@@ -39,6 +48,6 @@ angular
         redirectTo: '/'
       });
 
-    $locationProvider.html5Mode(false).hashPrefix('!');
+    // $locationProvider.html5Mode(false).hashPrefix('!');
 
   });
